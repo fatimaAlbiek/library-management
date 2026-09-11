@@ -185,3 +185,66 @@ function Books() {
                                 onChange={handleChange}
                                 required
                             />
+
+                            <input
+                                name="author"
+                                placeholder="Author"
+                                value={newBook.author}
+                                onChange={handleChange}
+                                required
+                            />
+
+                            <input
+                                name="category"
+                                placeholder="Category"
+                                value={newBook.category}
+                                onChange={handleChange}
+                                required
+                            />
+
+                            <textarea
+                                name="description"
+                                placeholder="Description"
+                                value={newBook.description}
+                                onChange={handleChange}
+                            />
+
+                            <input
+                                name="cover"
+                                placeholder="Cover URL"
+                                value={newBook.cover}
+                                onChange={handleChange}
+                            />
+
+                            <input
+                                name="quantity"
+                                type="number"
+                                min="1"
+                                value={newBook.quantity}
+                                onChange={handleChange}
+                            />
+
+                            <div className="modal-actions">
+                                <button type="submit">Add Book</button>
+
+                                <button
+                                    type="button"
+                                    onClick={() => setShowForm(false)}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            )}
+
+        </div>
+    );
+}
+
+export default Books;
