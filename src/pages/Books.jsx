@@ -19,7 +19,9 @@ function Books() {
         quantity: 1
     });
     const navigate = useNavigate();
-
+    const handleView = (id) => {
+        navigate(`/books/${id}`);
+    };
     const handleEdit = (id) => {
         navigate(`/edit-book/${id}`);
     };
@@ -168,6 +170,7 @@ function Books() {
                             </p>
 
                             <div className="book-actions">
+                                <button onClick={() => handleView(book.id)}>View</button>
                                 <button onClick={() => handleEdit(book.id)}>Edit</button>
                                 <button onClick={() => handleDelete(book.id)}>Delete</button>
                             </div>

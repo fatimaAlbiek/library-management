@@ -8,7 +8,7 @@
       "description": "A classic American novel.",
       "cover": "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
       "quantity": 5,
-      "available": 3
+      "available": 6
     },
     {
       "id": "2",
@@ -28,7 +28,7 @@
       "description": "A classic novel about relationships and society.",
       "cover": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
       "quantity": 3,
-      "available": 1
+      "available": 0
     }
   ],
   "users": [
@@ -47,12 +47,13 @@
   ],
   "borrowings": [
     {
-      "id": "1",
-      "userId": "1",
-      "bookId": "2",
-      "borrowDate": "2026-08-20",
+      "bookId": "3",
+      "memberId": "1",
+      "borrowDate": "2026-09-21",
+      "dueDate": "2026-09-18",
       "returnDate": null,
-      "status": "borrowed"
+      "status": "borrowed",
+      "id": 1
     }
   ]
 }
