@@ -95,3 +95,55 @@
     border-radius: 6px;
     cursor: pointer;
 }
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: white;
+    width: 450px;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal input,
+.modal textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+.modal textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-actions button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}

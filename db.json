@@ -1,58 +1,58 @@
 {
-    "books": [
-        {
-            "id": "1",
-            "title": "The Great Gatsby",
-            "author": "F. Scott Fitzgerald",
-            "category": "Classic",
-            "description": "A classic American novel.",
-            "cover": "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
-            "quantity": 5,
-            "available": 3
-        },
-        {
-            "id": "2",
-            "title": "1984",
-            "author": "George Orwell",
-            "category": "Dystopian",
-            "description": "A novel about surveillance and totalitarianism.",
-            "cover": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
-            "quantity": 4,
-            "available": 2
-        },
-        {
-            "id": "3",
-            "title": "Pride and Prejudice",
-            "author": "Jane Austen",
-            "category": "Romance",
-            "description": "A classic novel about relationships and society.",
-            "cover": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
-            "quantity": 3,
-            "available": 1
-        }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "name": "Sara Ahmed",
-            "email": "sara@example.com",
-            "role": "user"
-        },
-        {
-            "id": "2",
-            "name": "Admin",
-            "email": "admin@example.com",
-            "role": "admin"
-        }
-    ],
-    "borrowings": [
-        {
-            "id": "1",
-            "userId": "1",
-            "bookId": "2",
-            "borrowDate": "2026-08-20",
-            "returnDate": null,
-            "status": "borrowed"
-        }
-    ]
+  "books": [
+    {
+      "id": "1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Classic",
+      "description": "A classic American novel.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
+      "quantity": 5,
+      "available": 3
+    },
+    {
+      "id": "2",
+      "title": "1920",
+      "author": "George Orwell",
+      "category": "Dystopian",
+      "description": "A novel about surveillance and totalitarianism.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+      "quantity": 4,
+      "available": 2
+    },
+    {
+      "id": "3",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "category": "Romance",
+      "description": "A classic novel about relationships and society.",
+      "cover": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+      "quantity": 3,
+      "available": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Sara Ahmed",
+      "email": "sara@example.com",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "name": "Admin",
+      "email": "admin@example.com",
+      "role": "admin"
+    }
+  ],
+  "borrowings": [
+    {
+      "id": "1",
+      "userId": "1",
+      "bookId": "2",
+      "borrowDate": "2026-08-20",
+      "returnDate": null,
+      "status": "borrowed"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import "./Books.css";
-
+import { useNavigate } from "react-router-dom";
 function Books() {
     const [books, setBooks] = useState([]);
     const [search, setSearch] = useState("");
@@ -16,10 +16,21 @@ function Books() {
         category: "",
         description: "",
         cover: "",
-        quantity: 1,
-        available: 1
+        quantity: 1
     });
+    const navigate = useNavigate();
 
+    const handleEdit = (id) => {
+        navigate(`/edit-book/${id}`);
+    };
+    const handleDelete = async (id) => {
+        try {
+            await api.delete(`/books/${id}`);
+            getBooks();
+        } catch (error) {
+            console.error("Error deleting book:", error);
+        }
+    };
     useEffect(() => {
         getBooks();
     }, []);
@@ -78,8 +89,7 @@ function Books() {
                 category: "",
                 description: "",
                 cover: "",
-                quantity: 1,
-                available: 1
+                quantity: 1
             });
 
             setShowForm(false);
@@ -96,8 +106,8 @@ function Books() {
     return (
         <div>
 
+            {/* Header */}
             <div className="page-header">
-
                 <div>
                     <h1>Books</h1>
                     <p>Manage your library books</p>
@@ -109,9 +119,9 @@ function Books() {
                 >
                     + Add Book
                 </button>
-
             </div>
 
+            {/* Search + Filter */}
             <div className="filters">
 
                 <input
@@ -134,6 +144,7 @@ function Books() {
 
             </div>
 
+            {/* Books */}
             <div className="books-grid">
 
                 {filteredBooks.map((book) => (
@@ -157,8 +168,8 @@ function Books() {
                             </p>
 
                             <div className="book-actions">
-                                <button>Edit</button>
-                                <button>Delete</button>
+                                <button onClick={() => handleEdit(book.id)}>Edit</button>
+                                <button onClick={() => handleDelete(book.id)}>Delete</button>
                             </div>
 
                         </div>
@@ -168,8 +179,8 @@ function Books() {
 
             </div>
 
+            {/* Add Book Modal */}
             {showForm && (
-
                 <div className="modal-overlay">
 
                     <div className="modal">
@@ -185,7 +196,6 @@ function Books() {
                                 onChange={handleChange}
                                 required
                             />
-
                             <input
                                 name="author"
                                 placeholder="Author"
@@ -202,16 +212,9 @@ function Books() {
                                 required
                             />
 
-                            <textarea
-                                name="description"
-                                placeholder="Description"
-                                value={newBook.description}
-                                onChange={handleChange}
-                            />
-
                             <input
                                 name="cover"
-                                placeholder="Cover URL"
+                                placeholder="Cover image URL"
                                 value={newBook.cover}
                                 onChange={handleChange}
                             />
@@ -220,12 +223,24 @@ function Books() {
                                 name="quantity"
                                 type="number"
                                 min="1"
+                                placeholder="Quantity"
                                 value={newBook.quantity}
+                                onChange={handleChange}
+                                required
+                            />
+
+                            <textarea
+                                name="description"
+                                placeholder="Description"
+                                value={newBook.description}
                                 onChange={handleChange}
                             />
 
                             <div className="modal-actions">
-                                <button type="submit">Add Book</button>
+
+                                <button type="submit">
+                                    Add Book
+                                </button>
 
                                 <button
                                     type="button"
@@ -233,17 +248,17 @@ function Books() {
                                 >
                                     Cancel
                                 </button>
+
                             </div>
 
-                        </form>
+                        </form >
 
-                    </div>
+                    </div >
 
-                </div>
-
+                </div >
             )}
 
-        </div>
+        </div >
     );
 }
 
